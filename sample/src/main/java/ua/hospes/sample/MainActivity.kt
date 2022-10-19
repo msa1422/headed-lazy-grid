@@ -44,7 +44,16 @@ private fun Grid(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
         modifier = modifier,
     ) {
-        stickyHeader(key = "header") {
+
+        // Throws ArrayIndexOutOfBoundsException on reverse direction scroll
+        /*items(items = arrayListOf(testItems[0], testItems[1])) {
+            Item(
+                item = it,
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }*/
+
+        stickyHeader(key = "header2") {
             Text(
                 text = "TEST HEADER", modifier = Modifier
                     .fillMaxWidth()
@@ -59,7 +68,7 @@ private fun Grid(
             )
         }
 
-        stickyHeader(key = "header2") {
+        stickyHeader(key = "header3") {
             Text(
                 text = "TEST HEADER", modifier = Modifier
                     .fillMaxWidth()
@@ -102,7 +111,7 @@ private fun Preview() {
 }
 
 
-private val testItems = listOf<String>(
+private val testItems = listOf(
     "Item", "5yP1", "A54", "C0RMjL", "1kW", "5fI4ZCaJ", "0PgNQ7t",
     "j2Os", "1CL", "3BruWhs", "Kq0I8FP", "1Qf", "VBt", "k4g18L", "9yQ4", "O906cPso", "w4F3Ec6",
     "tBf", "4mCILC", "1733rG7", "25Lw", "0xnA", "9G02", "cho", "M3aC5", "d1UOJ", "6N2G8B",
